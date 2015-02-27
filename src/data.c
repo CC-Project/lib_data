@@ -1,4 +1,4 @@
-#include "../inc/data.h"
+#include "../include/data.h"
 
 // Data generation/free
 struct Data* data_generate(uint16_t data_number)
@@ -26,8 +26,6 @@ void data_free(struct Data* d)
         free(d);
     }
 }
-
-
 
 // Data operations
 uint8_t data_get(uint16_t n, struct Data* d)
