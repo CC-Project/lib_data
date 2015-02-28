@@ -5,11 +5,12 @@ struct Data* data_generate(uint16_t data_number)
 {
     //Allocates memory for the struct
     struct Data* d = malloc(sizeof(struct Data));
-    if (d == NULL)
+
+    if (!d)
          error("ERROR : data_generate : Dynamic allocation not possible for the data structure");
 
     //Allocates memory for the array
-    uint16_t n = (data_number - 1)/8 + 1; // Number of byte needed
+    uint16_t n = (data_number - 1) / 8 + 1; // Number of byte needed
     d->data_array = calloc(n,sizeof(uint8_t)); //Automatically sets the bits to zero
     if (d->data_array == NULL)
          error("ERROR : data_generate : Dynamic allocation not possible for the array");
@@ -21,7 +22,8 @@ struct Data* data_generate(uint16_t data_number)
 
 void data_free(struct Data* d)
 {
-    if(d != NULL){
+    if(d != NULL)
+    {
         free(d->data_array);
         free(d);
     }
@@ -31,27 +33,20 @@ void data_free(struct Data* d)
 uint8_t data_get(uint16_t n, struct Data* d)
 {
     if(n < d->data_number)
-    {
-        return ( d->data_array[n/8] >> ( n - 8*(n/8) ) ) & 1;
-    }
+        return (d->data_array[n/8] >> ( n - 8*(n/8) ) ) & 1;
     else
         error("ERROR: Incorect data number. Function data_get");
+
     return EXIT_FAILURE;
 }
 
 void data_set(uint16_t n, uint8_t data, struct Data* d)
 {
     if(n < d->data_number)
-    {
         if (data)
-        {
             d->data_array[n / 8] |=  (1 << ( n - 8*(n/8) ));
-        }
         else
-        {
             d->data_array[n / 8] &=  ~(1 << ( n - 8*(n/8) ));
-        }
-    }
     else
         error("ERROR: Incorect data number. Function data_set.");
 }
@@ -89,7 +84,8 @@ void data_delete(uint16_t n, struct Data* d)
         #else
             if(d == NULL)
                 printf("\ndata == NULL\n");
-            else{
+            else
+            {
                 printf("\nShow %d data :\n( ", d->data_number);
                 for(uint16_t i = d->data_number-1; i  < d->data_number; i--)
                 {
