@@ -7,7 +7,7 @@
         #include <stdlib.h>
     #endif // __AVR__
 
-    #include "../../lib_utilities/import.h"
+    #include "../../utilities/import.h"
     #include "../../../config.h"
 
     struct Data
