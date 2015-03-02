@@ -1,4 +1,4 @@
-#include "../include/data.h"
+#include "data.h"
 
 // Data generation/free
 struct Data* data_generate(uint16_t data_number)
