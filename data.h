@@ -12,7 +12,6 @@
     #include <stdlib.h>
     #include <inttypes.h>
 
-
     struct Data
     {
         uint16_t data_number;   // Number of data contained in "data_array"
