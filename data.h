@@ -1,12 +1,15 @@
 #ifndef DATA_H
     #define DATA_H
     #pragma once
+
     #define DEBUG
+
     #ifdef DEBUG
         #ifdef __AVR__
             #include "../lib_uart/uart.h"
         #endif
     #endif
+
     #include "../lib_utilities/utilities.h"
     #include <stdio.h>
     #include <stdlib.h>

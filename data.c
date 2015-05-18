@@ -7,7 +7,7 @@ struct Data* data_generate(uint16_t data_number)
     struct Data* d = malloc(sizeof(struct Data));
 
     if (!d)
-        {
+    {
         #ifdef DEBUG
             error("ERROR : data_generate : Dynamic allocation not possible for the data structure");
         #endif // DEBUG
