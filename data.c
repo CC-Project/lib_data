@@ -146,7 +146,7 @@ void data_delete(uint16_t n, struct Data* d)
                 printf("\ndata == NULL\n");
             else
             {
-                printf("\nShow %d data :\n( ", d->data_number);
+                printf("(");
                 for(uint16_t i = d->data_number-1; i  < d->data_number; i--)
                     printf("%d ", data_get(i, d));
                 printf(")\n\n");
