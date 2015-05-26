@@ -133,7 +133,7 @@ void data_delete(uint16_t n, struct Data* d)
                 uart_tx_str("data == NULL\r\n");
             else
             {
-                for(uint16_t i = d->data_number-1; i  < d->data_number; i--)
+                for(uint16_t i = 0; i  < d->data_number; i++)
                 {
                     char str[5];
                     sprintf(str, "%d", data_get(i, d));
@@ -147,7 +147,7 @@ void data_delete(uint16_t n, struct Data* d)
             else
             {
                 printf("(");
-                for(uint16_t i = d->data_number-1; i  < d->data_number; i--)
+                for(uint16_t i = 0; i  < d->data_number; i++)
                     printf("%d ", data_get(i, d));
                 printf(")\n\n");
             }
